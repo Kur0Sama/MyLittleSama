@@ -1,0 +1,14 @@
+{
+  "name": "mylittlesama",
+  "version": "0.0.1",
+  "description": "My little sama ! ~~",
+  "main": "index.js",
+  "scripts": {
+    "test": "node client"
+  },
+  "author": "Kur0",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
