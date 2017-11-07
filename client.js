@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('message', message => {
-    if(message.startsWith('!mc')) {
+    if(message.content.startsWith('!mc')) {
         let role = message.guild.roles.find('name', '♦ Minecraft ♦');
         if (message.guild.member(message.author).roles.includes(role)) {
             message.channel.send(`Tu à déja ce role !`)
@@ -10,7 +10,7 @@ client.on('message', message => {
         }
         message.guild.member(message.author).addRole(role);
     }
-    if(message.startsWith('!dst')) {
+    if(message.content.startsWith('!dst')) {
         let role = message.guild.roles.find('name', '♦ Don\'t Starve ♦');
         if (message.guild.member(message.author).roles.includes(role)) {
             message.channel.send(`Tu à déja ce role !`)
@@ -18,7 +18,7 @@ client.on('message', message => {
         }
         message.guild.member(message.author).addRole(role);
     }
-    if(message.startsWith('!wot')) {
+    if(message.content.startsWith('!wot')) {
         let role = message.guild.roles.find('name', '♦ World of Tanks ♦');
         if (message.guild.member(message.author).roles.includes(role)) {
             message.channel.send(`Tu à déja ce role !`)
@@ -26,7 +26,7 @@ client.on('message', message => {
         }
         message.guild.member(message.author).addRole(role);
     }
-    if(message.startsWith('!lol')) {
+    if(message.content.startsWith('!lol')) {
         let role = message.guild.roles.find('name', '♦ League of Legends ♦');
         if (message.guild.member(message.author).roles.includes(role)) {
             message.channel.send(`Tu à déja ce role !`)
@@ -34,7 +34,7 @@ client.on('message', message => {
         }
         message.guild.member(message.author).addRole(role);
     }
-    if(message.startsWith('!osu')) {
+    if(message.content.startsWith('!osu')) {
         let role = message.guild.roles.find('name', '♦ Osu! ♦');
         if (message.guild.member(message.author).roles.includes(role)) {
             message.channel.send(`Tu à déja ce role !`)
@@ -42,7 +42,7 @@ client.on('message', message => {
         }
         message.guild.member(message.author).addRole(role);
     }
-    if(message.startsWith('!els')) {
+    if(message.content.startsWith('!els')) {
         let role = message.guild.roles.find('name', '♦ Elsword ♦');
         if (message.guild.member(message.author).roles.includes(role)) {
             message.channel.send(`Tu à déja ce role !`)
