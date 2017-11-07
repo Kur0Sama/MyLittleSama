@@ -23,8 +23,7 @@ client.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let command = args.shift().toLowerCase();
 
-    if (command == prefix + 'role') {
-        console.log('someone did !role')
+    if (command == 'role') {
         if (args[0] == 'minecraft' || args[0] == 'mc') {
             let role = message.guild.roles.find('name', '♦ Minecraft ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
@@ -78,6 +77,13 @@ client.on('message', message => {
             }
             message.guild.member(message.author).addRole(role);
             cEmbed(channel, role);
+        } else {
+            message.channel.send({
+                embed: {
+                    description: 'Erreur, ce role n\'existe pas ou tu n\'a pas entré de nom de role !',
+                    color: 0xf44141
+                }
+            })
         }
     }
 })
