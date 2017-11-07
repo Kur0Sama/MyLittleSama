@@ -2,16 +2,18 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 function cEmbed(channel, role) {
+    let str = `Le role **${role.name}** à bien été ajouté !`;
     let embed = new Discord.RichEmbed()
       .setColor(0x42f44b)
-      .setDescription(`Le role **${role.name}** à bien été ajouté !`).replace(':diamonds:', '\:diamonds:');
+      .setDescription(str.replace(':diamonds:', '\:diamonds:'));
     channel.send(embed);
 };
 
 function aEmbed(channel, role) {
+    let str = `Tu à déja le role **${role.name}** !`;
     let embed = new Discord.RichEmbed()
       .setColor(0x42f44b)
-      .setDescription(`Tu à déja le role **${role.name}** !`).replace(':diamonds:', '\:diamonds:');
+      .setDescription(str.replace(':diamonds:', '\:diamonds:'));
     channel.send(embed);
 };
 
