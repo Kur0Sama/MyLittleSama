@@ -18,9 +18,13 @@ function aEmbed(channel, role) {
 };
 
 client.on('message', message => {
+    let prefix = '!';
     let channel = message.channel;
-    if (message.content.startsWith('!role')) {
-        if (message.content[1].toLowerCase() == 'minecraft' || message.content[1].toLowerCase() == 'mc') {
+    let args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let command = args.shift().toLowerCase();
+
+    if (command == prefix + 'role') {
+        if (args[0] == 'minecraft' || args[0] == 'mc') {
             let role = message.guild.roles.find('name', '♦ Minecraft ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
                 aEmbed(channel, role);
@@ -29,7 +33,7 @@ client.on('message', message => {
             message.guild.member(message.author).addRole(role);
             cEmbed(channel, role);
         }
-        if (message.content[1].toLowerCase() == 'dontstarve' || message.content[1].toLowerCase() == 'dst') {
+        if (args[0] == 'dontstarve' || args[0] == 'dst') {
             let role = message.guild.roles.find('name', '♦ Don\'t Starve ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
                 aEmbed(channel, role);
@@ -38,7 +42,7 @@ client.on('message', message => {
             message.guild.member(message.author).addRole(role);
             cEmbed(channel, role);
         }
-        if (message.content[1].toLowerCase() == 'worldoftanks' || message.content[1].toLowerCase() == 'wot') {
+        if (args[0] == 'worldoftanks' || args[0] == 'wot') {
             let role = message.guild.roles.find('name', '♦ World of Tanks ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
                 aEmbed(channel, role);
@@ -47,7 +51,7 @@ client.on('message', message => {
             message.guild.member(message.author).addRole(role);
             cEmbed(channel, role);
         }
-        if (message.content[1].toLowerCase() == 'leagueoflegends' || message.content[1].toLowerCase() == 'lol') {
+        if (args[0] == 'leagueoflegends' || args[0] == 'lol') {
             let role = message.guild.roles.find('name', '♦ League of Legends ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
                 aEmbed(channel, role);
@@ -56,7 +60,7 @@ client.on('message', message => {
             message.guild.member(message.author).addRole(role);
             cEmbed(channel, role);
         }
-        if (message.content[1].toLowerCase() == 'osu!' || message.content[1].toLowerCase() == 'osu') {
+        if (args[0] == 'osu!' || args[0] == 'osu') {
             let role = message.guild.roles.find('name', '♦ Osu! ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
                 aEmbed(channel, role);
@@ -65,7 +69,7 @@ client.on('message', message => {
             message.guild.member(message.author).addRole(role);
             cEmbed(channel, role);
         }
-        if (message.content[1].toLowerCase() == 'elsword' || message.content[1].toLowerCase() == 'els') {
+        if (args[0] == 'elsword' || args[0] == 'els') {
             let role = message.guild.roles.find('name', '♦ Elsword ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
                 aEmbed(channel, role);
