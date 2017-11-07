@@ -24,6 +24,7 @@ client.on('message', message => {
     let command = args.shift().toLowerCase();
 
     if (command == prefix + 'role') {
+        console.log('someone did !role')
         if (args[0] == 'minecraft' || args[0] == 'mc') {
             let role = message.guild.roles.find('name', '♦ Minecraft ♦');
             if (message.guild.member(message.author).roles.array().includes(role)) {
